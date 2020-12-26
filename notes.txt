@@ -1,0 +1,6 @@
+python -m django --version
+
+django-admin startproject personalwebsite
+python manage.py check
+
+python manage.py startapp overview
