@@ -27,7 +27,7 @@ SECRET_KEY = 'yj-#3&c^tyf74q899%5%#ggw(f6!=)hm-^mrn_1@=tmw*@apdt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.chris-turnbull.com','webapp-1006793.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.chris-turnbull.com','webapp-1006793.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'overview.apps.OverviewConfig'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'personalwebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['personal-website/personalwebsite/overview/templates'],
+        'DIRS': ['overview/templates','swahili/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
