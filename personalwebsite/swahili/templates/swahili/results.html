@@ -1,22 +1,12 @@
-{#<!doctype html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="utf-8"/>#}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>#}
-{#    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">#}
-{#    <title>ASLOML</title>#}
-{#</head>#}
-{#<body style="margin:0;">#}
-{#<div style="display:flex;max-width:800px;flex-direction:column;justify-content:center;align-items:center;margin: 0 auto;height: 100vh;">#}
-{#    <span style="margin-bottom:20px;">Christopher Turnbull</span>#}
-{#    <span style="margin-bottom:20px;">I code with my bare hands</span>#}
-{#    <a href="mailto:chris@chris-turnbull.com" style="margin-bottom:10px;">email</a>#}
-{#    <a href="http://www.github.com/christopher-turnbull" style="margin-bottom:10px;">github</a>#}
-{#    <a href="https://www.linkedin.com/in/christopher-grant-turnbull//" style="margin-bottom:10px;">linkedin</a>#}
-{#    <a href="{% url 'swahili:mambo_dunia' %}">swahili</a>#}
-{#</div>#}
-{#</body>#}
-{#</html>#}
+{#<h1>{{ question.question_text }}</h1>#}
+{##}
+{#<ul>#}
+{#{% for choice in question.choice_set.all %}#}
+{#    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>#}
+{#{% endfor %}#}
+{#</ul>#}
+{##}
+{#<a href="{% url 'swahili:detail' question.id %}">Vote again?</a>#}
 
 
 {% load static %}
@@ -71,16 +61,15 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="mt-5">Christopher Turnbull</h2>
-        <p class="lead">I code with my bare hands</p>
-        <ul class="list-unstyled">
-{#          <li>Bootstrap 4.5.3</li>#}
-{#          <li>jQuery 3.5.1</li>#}
-            <li><a href="mailto:chris@chris-turnbull.com" style="margin-bottom:10px;">email</a></li>
-            <li><a href="http://www.github.com/christopher-turnbull" style="margin-bottom:10px;">github</a></li>
-            <li><a href="https://www.linkedin.com/in/christopher-grant-turnbull//" style="margin-bottom:10px;">linkedin</a></li>
-            <li><a href="{% url 'swahili:mambo_dunia' %}">swahili</a></li>
+        <h1>{{ question.question_text }}</h1>
+
+        <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
         </ul>
+
+        <a href="{% url 'swahili:detail' question.id %}">Vote again?</a>
       </div>
     </div>
   </div>
@@ -92,4 +81,3 @@
 </body>
 
 </html>
-

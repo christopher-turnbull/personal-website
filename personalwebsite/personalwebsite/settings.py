@@ -29,7 +29,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.chris-turnbull.com','webapp-1006793.pythonanywhere.com','127.0.0.1']
 
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'overview.apps.OverviewConfig'
+    'overview.apps.OverviewConfig',
+    'swahili.apps.SwahiliConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_DIRS = [
+    # '/var/www/static/',
+    BASE_DIR / "overview/static/",
+    BASE_DIR / "swahili/static/",
+]
