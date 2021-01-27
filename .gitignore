@@ -1,4 +1,11 @@
 # Environment variables
 .env
-notes.txt
+
+# Probably better to have the DEBUG = FALSE based of a check to see if we're in pythonanywhere or not, but this will do for now
+settings.py
+
+# Pycache
 **/__pycache__
+
+# Other
+notes.txt
