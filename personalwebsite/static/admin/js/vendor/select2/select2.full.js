@@ -689,7 +689,7 @@ S2.define('select2/utils',[
         var key = keys[k];
 
         // Lowercase the first letter
-        // By default, dash-separated becomes camelCase
+        // By default, plotting-separated becomes camelCase
         key = key.substring(0, 1).toLowerCase() + key.substring(1);
 
         if (!(key in dataLevel)) {

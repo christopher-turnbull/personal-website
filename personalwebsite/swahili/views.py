@@ -14,9 +14,9 @@ from .models import Question, Choice
 # def mambo_dunia(request):
 #     return render(request, 'swahili/index.html', {})
 
-def mambo_dunia(request):
+def swahili_overview(request):
 
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    latest_question_list = Question.objects.order_by('-pub_date')[:50]
     template = loader.get_template('swahili/index.html')
     context = {
         'latest_question_list': latest_question_list,
